@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saffron &amp; Sage — Modern Indian Fine Dining in Dombivli</title>
+<meta name="description" content="Saffron & Sage is a modern Indian fine-dining & fusion restaurant in Dombivli West. Seasonal tasting menus, coastal spice, and warm hospitality. Reserve your table today." />
+<meta name="theme-color" content="#1f2a24" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant" />
+<meta property="og:title" content="Saffron & Sage — Modern Indian Fine Dining" />
+<meta property="og:description" content="Seasonal Indian fine-dining & fusion in Dombivli West. Reserve your table." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --saffron:#e08a2b;
+    --saffron-deep:#c56e17;
+    --green:#1f2a24;
+    --green-mid:#2f423a;
+    --green-soft:#3d5449;
+    --cream:#f7f1e6;
+    --cream-2:#efe6d4;
+    --charcoal:#161b18;
+    --ink:#20261f;
+    --muted:#6d7a70;
+    --line:rgba(31,42,36,.12);
+    --white:#ffffff;
+
+    --shadow-sm:0 2px 8px rgba(22,27,24,.08);
+    --shadow-md:0 12px 30px rgba(22,27,24,.14);
+    --shadow-lg:0 26px 60px rgba(22,27,24,.22);
+
+    --r-sm:10px;
+    --r-md:16px;
+    --r-lg:26px;
+    --r-pill:999px;
+
+    --s-1:8px; --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:96px; --s-7:128px;
+
+    --maxw:1180px;
+    --font-display:"Playfair Display", Georgia, serif;
+    --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;margin:0;color:var(--green);}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  :focus-visible{outline:2px solid var(--saffron);outline-offset:3px;border-radius:4px;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .section{padding:var(--s-7) 0;}
+  @media(max-width:720px){.section{padding:var(--s-6) 0;}}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;color:var(--saffron-deep);margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--saffron);display:inline-block;}
+  .section-title{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.01em;}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:56ch;margin-top:16px;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:.95rem;
+    padding:14px 26px;border-radius:var(--r-pill);border:1px solid transparent;
+    cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--saffron);color:#20180a;box-shadow:0 10px 24px rgba(224,138,43,.34);}
+  .btn-primary:hover{background:var(--saffron-deep);color:#fff;transform:translateY(-2px);box-shadow:0 16px 30px rgba(197,110,23,.42);}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(247,241,230,.45);}
+  .btn-ghost:hover{background:rgba(247,241,230,.12);border-color:var(--cream);transform:translateY(-2px);}
+  .btn-dark{background:var(--green);color:var(--cream);}
+  .btn-dark:hover{background:var(--charcoal);transform:translateY(-2px);box-shadow:var(--shadow-md);}
+
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+    padding:20px 0;
+  }
+  header.scrolled{
+    background:rgba(247,241,230,.82);
+    backdrop-filter:saturate(140%) blur(14px);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    box-shadow:0 1px 0 var(--line),var(--shadow-sm);
+    padding:12px 0;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:700;font-size:1.4rem;color:var(--cream);letter-spacing:.01em;transition:color .35s;}
+  header.scrolled .brand{color:var(--green);}
+  .brand .mark{
+    width:40px;height:40px;border-radius:50%;flex:0 0 auto;
+    display:grid;place-items:center;background:var(--saffron);color:#20180a;
+    font-size:1.15rem;font-weight:700;box-shadow:var(--shadow-sm);
+  }
+  .brand small{display:block;font-family:var(--font-body);font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;font-weight:500;opacity:.7;margin-top:-2px;}
+
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-weight:500;font-size:.95rem;color:var(--cream);position:relative;transition:color .3s;}
+  header.scrolled .nav-links a{color:var(--green-mid);}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--saffron);transition:width .3s ease;}
+  .nav-links a:hover{color:var(--saffron);}
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+
+  .hamburger{
+    display:none;background:transparent;border:0;cursor:pointer;padding:8px;
+    width:44px;height:44px;border-radius:10px;
+  }
+  .hamburger span{display:block;width:24px;height:2px;background:var(--cream);margin:5px auto;border-radius:2px;transition:.3s;}
+  header.scrolled .hamburger span{background:var(--green);}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* Hero */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    color:var(--cream);overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(22,27,24,.55) 0%, rgba(22,27,24,.35) 40%, rgba(22,27,24,.78) 100%),
+      linear-gradient(90deg, rgba(31,42,36,.72) 0%, rgba(31,42,36,.15) 60%),
+      url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;background-position:center;
+    transform:scale(1.06);
+    z-index:0;
+  }
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:80px;}
+  .hero-inner{max-width:760px;}
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,5.2rem);color:var(--cream);letter-spacing:-.02em;
+    text-shadow:0 2px 30px rgba(0,0,0,.35);
+  }
+  .hero h1 em{color:var(--saffron);font-style:italic;}
+  .hero .lead{color:rgba(247,241,230,.9);font-size:1.2rem;max-width:52ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:46px;padding-top:28px;border-top:1px solid rgba(247,241,230,.2);}
+  .hero-meta div{min-width:120px;}
+  .hero-meta strong{font-family:var(--font-display);font-size:1.5rem;color:var(--cream);display:block;}
+  .hero-meta span{font-size:.82rem;letter-spacing:.05em;color:rgba(247,241,230,.72);}
+
+  .scroll-hint{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+    font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,241,230,.7);
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-hint::after{content:"";width:1px;height:38px;background:linear-gradient(var(--saffron),transparent);animation:drop 1.8s infinite;}
+  @keyframes drop{0%{opacity:0;transform:scaleY(.3);}50%{opacity:1;}100%{opacity:0;transform:scaleY(1);}}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;}
+  .about-media{position:relative;}
+  .about-media img{border-radius:var(--r-lg);box-shadow:var(--shadow-lg);width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;}
+  .about-badge{
+    position:absolute;bottom:-28px;right:-14px;background:var(--green);color:var(--cream);
+    padding:22px 26px;border-radius:var(--r-md);box-shadow:var(--shadow-lg);max-width:220px;
+  }
+  .about-badge strong{font-family:var(--font-display);font-size:2rem;color:var(--saffron);display:block;line-height:1;}
+  .about-badge span{font-size:.82rem;color:rgba(247,241,230,.8);}
+  .about p + p{margin-top:18px;}
+  .signature-line{
+    margin-top:28px;font-family:var(--font-display);font-style:italic;font-size:1.5rem;color:var(--green-mid);
+  }
+  .sign-name{display:block;font-family:var(--font-body);font-style:normal;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron-deep);margin-top:8px;}
+
+  /* Menu */
+  .menu{background:var(--green);color:var(--cream);}
+  .menu .section-title,.menu h3{color:var(--cream);}
+  .menu .lead{color:rgba(247,241,230,.72);}
+  .menu-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:56px;}
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 56px;}
+  .dish{
+    display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:baseline;
+    padding:22px 0;border-bottom:1px solid rgba(247,241,230,.14);
+    transition:transform .3s ease;
+  }
+  .dish:hover{transform:translateX(6px);}
+  .dish-name{font-family:var(--font-display);font-size:1.28rem;color:var(--cream);display:flex;align-items:center;gap:10px;}
+  .dish-price{font-family:var(--font-display);font-size:1.28rem;color:var(--saffron);white-space:nowrap;}
+  .dish-desc{grid-column:1/-1;color:rgba(247,241,230,.6);font-size:.95rem;}
+  .tag{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:var(--r-pill);border:1px solid rgba(224,138,43,.5);color:var(--saffron);}
+  .menu-note{text-align:center;margin-top:56px;color:rgba(247,241,230,.6);font-size:.92rem;}
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:52px;
+  }
+  .gallery-grid figure{position:relative;overflow:hidden;border-radius:var(--r-md);margin:0;box-shadow:var(--shadow-sm);}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+  .gallery-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,27,24,.4),transparent 55%);opacity:0;transition:opacity .4s;}
+  .gallery-grid figure:hover img{transform:scale(1.08);}
+  .gallery-grid figure:hover::after{opacity:1;}
+  .g-tall{grid-row:span 2;}
+  .g-wide{grid-column:span 2;}
+
+  /* Chef / Experience */
+  .exp{background:var(--cream-2);}
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .exp-media img{border-radius:var(--r-lg);box-shadow:var(--shadow-lg);aspect-ratio:1/1;object-fit:cover;width:100%;}
+  .exp-features{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px;}
+  .feature h4{font-size:1.12rem;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+  .feature .ico{width:38px;height:38px;border-radius:10px;background:var(--saffron);display:grid;place-items:center;color:#20180a;flex:0 0 auto;}
+  .feature p{color:var(--muted);font-size:.94rem;}
+
+  /* Testimonials */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px;}
+  .quote{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:34px 30px;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .quote:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+  .stars{color:var(--saffron);letter-spacing:3px;margin-bottom:16px;font-size:1rem;}
+  .quote p{font-family:var(--font-display);font-style:italic;font-size:1.12rem;color:var(--green-mid);line-height:1.5;}
+  .quote .who{margin-top:22px;display:flex;align-items:center;gap:12px;}
+  .avatar{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--saffron);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;}
+  .who b{display:block;font-size:.95rem;color:var(--ink);}
+  .who span{font-size:.8rem;color:var(--muted);}
+
+  /* Reservation */
+  .reserve{background:var(--green);color:var(--cream);}
+  .reserve .section-title{color:var(--cream);}
+  .reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch;}
+  .res-card{background:rgba(247,241,230,.06);border:1px solid rgba(247,241,230,.14);border-radius:var(--r-lg);padding:40px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:.82rem;letter-spacing:.05em;color:rgba(247,241,230,.75);margin-bottom:8px;font-weight:600;}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 16px;border-radius:var(--r-sm);border:1px solid rgba(247,241,230,.22);
+    background:rgba(22,27,24,.35);color:var(--cream);font-family:var(--font-body);font-size:.98rem;
+    transition:border .25s,background .25s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:rgba(247,241,230,.4);}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--saffron);background:rgba(22,27,24,.55);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .res-card .btn{width:100%;margin-top:8px;}
+  .form-success{
+    display:none;margin-top:18px;padding:16px 18px;border-radius:var(--r-sm);
+    background:rgba(224,138,43,.16);border:1px solid var(--saffron);color:var(--cream);font-size:.94rem;
+  }
+  .form-success.show{display:block;animation:fadeUp .5s ease;}
+
+  .info-block{margin-bottom:30px;}
+  .info-block h4{color:var(--cream);font-size:1.15rem;margin-bottom:8px;}
+  .info-block p,.info-block a{color:rgba(247,241,230,.78);font-size:.98rem;}
+  .info-block a:hover{color:var(--saffron);}
+  .hours-list li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(247,241,230,.14);font-size:.95rem;color:rgba(247,241,230,.82);}
+  .hours-list li b{color:var(--cream);font-weight:600;}
+  .map{
+    margin-top:24px;border-radius:var(--r-md);overflow:hidden;height:190px;position:relative;
+    background:
+      linear-gradient(135deg, rgba(31,42,36,.2), rgba(224,138,43,.12)),
+      url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80");
+    background-size:cover;background-position:center;
+    border:1px solid rgba(247,241,230,.14);display:grid;place-items:center;
+  }
+  .map .pin{background:var(--saffron);color:#20180a;font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--r-pill);box-shadow:var(--shadow-md);display:flex;align-items:center;gap:8px;}
+
+  /* Footer */
+  footer{background:var(--charcoal);color:rgba(247,241,230,.72);padding:70px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;margin-bottom:48px;}
+  footer .brand{color:var(--cream);margin-bottom:16px;}
+  footer h5{color:var(--cream);font-family:var(--font-body);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px;}
+  .foot-links li{margin-bottom:10px;}
+  .foot-links a:hover{color:var(--saffron);}
+  .socials{display:flex;gap:12px;margin-top:18px;}
+  .socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(247,241,230,.2);display:grid;place-items:center;transition:.3s;color:var(--cream);}
+  .socials a:hover{background:var(--saffron);color:#20180a;border-color:var(--saffron);transform:translateY(-3px);}
+  .foot-bottom{border-top:1px solid rgba(247,241,230,.12);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem;}
+  .foot-bottom a{color:var(--saffron);font-weight:600;}
+  .foot-bottom a:hover{text-decoration:underline;}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+  /* Mobile menu */
+  .mobile-menu{
+    position:fixed;inset:0;z-index:55;background:var(--green);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
+    transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .mobile-menu.open{transform:none;}
+  .mobile-menu a{font-family:var(--font-display);font-size:1.8rem;color:var(--cream);padding:10px;}
+  .mobile-menu a:hover{color:var(--saffron);}
+  .mobile-menu .btn{margin-top:20px;font-family:var(--font-body);font-size:1rem;}
+
+  @media(max-width:960px){
+    .about-grid,.exp-grid,.reserve-grid{grid-template-columns:1fr;gap:44px;}
+    .about-badge{right:14px;}
+    .test-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:760px){
+    .nav-links,.nav-cta .btn{display:none;}
+    .hamburger{display:block;}
+    .menu-grid{grid-template-columns:1fr;gap:0 0;}
+    .exp-features{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .hero-meta div{min-width:100px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Saffron and Sage home">
+      <span class="mark" aria-hidden="true">S</span>
+      <span>Saffron&nbsp;&amp;&nbsp;Sage<small>Dombivli · Est. 2016</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#experience">Experience</a>
+      <a href="#reserve">Visit</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn btn-primary">Reserve a Table</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#about">Our Story</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#experience">Experience</a>
+  <a href="#reserve">Visit</a>
+  <a href="#reserve" class="btn btn-primary">Reserve a Table</a>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-bg" role="img" aria-label="Elegantly plated Indian fine-dining dish on a dark table"></div>
+    <div class="wrap">
+      <div class="hero-inner reveal">
+        <span class="eyebrow" style="color:var(--saffron)">Modern Indian · Fine Dining · Fusion</span>
+        <h1>Where every spice tells a <em>story</em>.</h1>
+        <p class="lead">A contemporary Indian table in the heart of Dombivli — heritage recipes reimagined with coastal produce, slow fire, and a little quiet theatre.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn btn-primary">Reserve a Table</a>
+          <a href="#menu" class="btn btn-ghost">Explore the Menu</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>4.9</strong><span>Google · 1,240 reviews</span></div>
+          <div><strong>7-Course</strong><span>Seasonal tasting menu</span></div>
+          <div><strong>2016</strong><span>Serving Dombivli</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Warm, intimate restaurant dining room with amber lighting" loading="lazy" />
+        <div class="about-badge">
+          <strong>08</strong>
+          <span>years of plating memories, one table at a time</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="section-title">Rooted in tradition, plated for today.</h2>
+        <p class="lead">Saffron &amp; Sage began in 2016 as a small family kitchen with an ambitious idea — that the food we grew up with deserved the ceremony of fine dining, without losing an ounce of its soul.</p>
+        <p style="margin-top:18px;color:var(--muted)">We source spices from a single-estate farm in Kerala, greens from growers across the Konkan coast, and seafood from the morning catch at Bhau Cha Dhakka. Everything is ground fresh, tempered to order, and served the way our grandmothers intended — with generosity.</p>
+        <p style="margin-top:14px;color:var(--muted)">The result is a menu that feels both familiar and quietly surprising: a Malvani curry beside a saffron-cured scallop, a nostalgic dal beside a smoked-beet chaat.</p>
+        <p class="signature-line">"Cook with memory. Plate with intent."
+          <span class="sign-name">— Chef Aarav Deshmukh, Founder</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section menu" id="menu">
+    <div class="wrap">
+      <div class="menu-head">
+        <div class="reveal">
+          <span class="eyebrow">Signature Plates</span>
+          <h2 class="section-title">A menu written in spice.</h2>
+          <p class="lead">A selection from our à la carte. Our full seasonal tasting menu changes with every harvest.</p>
+        </div>
+        <a href="#reserve" class="btn btn-primary reveal">Book to taste it all</a>
+      </div>
+
+      <div class="menu-grid">
+        <div class="dish reveal">
+          <span class="dish-name">Saffron Scallop Chaat <span class="tag">Chef's</span></span>
+          <span class="dish-price">₹680</span>
+          <span class="dish-desc">Saffron-cured sea scallops, tamarind pearls, curry-leaf oil, puffed rice crunch.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Smoked Beet &amp; Sage Tikki <span class="tag">Veg</span></span>
+          <span class="dish-price">₹420</span>
+          <span class="dish-desc">Charcoal-smoked beetroot, hung curd, burnt sage, pomegranate reduction.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Malvani Prawn Curry</span>
+          <span class="dish-price">₹740</span>
+          <span class="dish-desc">Coastal tiger prawns, fresh kokum, coconut &amp; roasted red masala, steamed rice.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Kashmiri Morel Pulao <span class="tag">Veg</span></span>
+          <span class="dish-price">₹560</span>
+          <span class="dish-desc">Himalayan gucchi mushrooms, aged basmati, brown onion, saffron milk.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Slow-Fire Lamb Nihari</span>
+          <span class="dish-price">₹820</span>
+          <span class="dish-desc">Twelve-hour braised lamb shank, marrow, hand-pounded nihari masala, khameeri roti.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Dal Saffron &amp; Sage <span class="tag">House</span></span>
+          <span class="dish-price">₹380</span>
+          <span class="dish-desc">Black urad simmered overnight, cultured butter, smoked tomato, a whisper of sage.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Rose &amp; Cardamom Phirni</span>
+          <span class="dish-price">₹320</span>
+          <span class="dish-desc">Slow-set rice pudding, Gulkand, toasted pista, edible rose, 24k gold leaf.</span>
+        </div>
+        <div class="dish reveal">
+          <span class="dish-name">Filter Coffee Tres Leches <span class="tag">Fusion</span></span>
+          <span class="dish-price">₹360</span>
+          <span class="dish-desc">South-Indian filter coffee soak, jaggery caramel, cardamom cream.</span>
+        </div>
+      </div>
+      <p class="menu-note">All prices in ₹ and exclusive of taxes. Please inform us of any allergies — our kitchen is happy to adapt.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto;">
+        <span class="eyebrow" style="justify-content:center;">The Room &amp; The Plate</span>
+        <h2 class="section-title">A feast for every sense.</h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">Warm brass, candlelight, and food you'll want to photograph before your first bite.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-tall reveal"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80" alt="Beautifully plated gourmet main course" loading="lazy" /></figure>
+        <figure class="g-wide reveal"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80" alt="Stylish restaurant dining area with set tables" loading="lazy" /></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=80" alt="Colourful cocktail served at the bar" loading="lazy" /></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=80" alt="Traditional Indian thali with assorted dishes" loading="lazy" /></figure>
+        <figure class="g-wide reveal"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80" alt="Chef garnishing a dish in the kitchen" loading="lazy" /></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Cosy candlelit dinner table setting" loading="lazy" /></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=900&q=80" alt="Rich dessert plated with artistic detail" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / CHEF -->
+  <section class="section exp" id="experience">
+    <div class="wrap exp-grid">
+      <div class="exp-media reveal">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1100&q=80" alt="Portrait of a chef plating a dish in a professional kitchen" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Meet the Chef</span>
+        <h2 class="section-title">Chef Aarav Deshmukh</h2>
+        <p class="lead">Trained in Mumbai and Lyon, Chef Aarav returned home with one mission: to give Dombivli a table worth travelling for. His cooking is precise, seasonal, and deeply personal — every plate a page from his family's kitchen diary.</p>
+        <div class="exp-features">
+          <div class="feature">
+            <h4><span class="ico" aria-hidden="true">✦</span> Seasonal Tasting</h4>
+            <p>A 7-course journey that changes with each harvest and the day's coastal catch.</p>
+          </div>
+          <div class="feature">
+            <h4><span class="ico" aria-hidden="true">◈</span> Chef's Counter</h4>
+            <p>Eight seats at the pass — watch, taste, and talk fire and spice with the team.</p>
+          </div>
+          <div class="feature">
+            <h4><span class="ico" aria-hidden="true">❖</span> Private Dining</h4>
+            <p>A curtained alcove for 12, with a bespoke menu for the occasions that matter.</p>
+          </div>
+          <div class="feature">
+            <h4><span class="ico" aria-hidden="true">✧</span> Wine &amp; Spice Pairing</h4>
+            <p>Sommelier-led pairings and house cocktails built around Indian botanicals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+        <span class="eyebrow" style="justify-content:center;">Kind Words</span>
+        <h2 class="section-title">Loved by our guests.</h2>
+      </div>
+      <div class="test-grid">
+        <div class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>The saffron scallop chaat is worth the drive from South Bombay alone. Easily the most thoughtful Indian meal I've had this year.</p>
+          <div class="who"><span class="avatar">RN</span><div><b>Rhea Nair</b><span>Food writer, Mumbai</span></div></div>
+        </div>
+        <div class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>We booked the chef's counter for our anniversary and it was pure theatre. Warm, unpretentious, and every course better than the last.</p>
+          <div class="who"><span class="avatar">AV</span><div><b>Aditya &amp; Vaishali</b><span>Dombivli regulars</span></div></div>
+        </div>
+        <div class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>Finally, fine dining in Dombivli that doesn't ask you to travel to Bandra. The dal alone has ruined every other dal for me.</p>
+          <div class="who"><span class="avatar">KM</span><div><b>Kabir Mehta</b><span>Google Local Guide</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION / CONTACT -->
+  <section class="section reserve" id="reserve">
+    <div class="wrap">
+      <div class="reveal" style="max-width:600px;margin-bottom:52px;">
+        <span class="eyebrow">Reserve · Visit</span>
+        <h2 class="section-title">Book your table.</h2>
+        <p class="lead" style="color:rgba(247,241,230,.72)">Tell us when you're coming and we'll take care of the rest. For parties larger than eight, please call us directly.</p>
+      </div>
+
+      <div class="reserve-grid">
+        <!-- Form -->
+        <div class="res-card reveal">
+          <form id="resForm" novalidate>
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. Priya Kulkarni" required autocomplete="name" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98XXXXXXXX" required autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="guests">Guests</label>
+                <select id="guests" name="guests" required>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                  <option value="8">7–8 guests</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div class="field">
+                <label for="time">Time</label>
+                <select id="time" name="time" required>
+                  <option>7:00 PM</option>
+                  <option>7:30 PM</option>
+                  <option>8:00 PM</option>
+                  <option>8:30 PM</option>
+                  <option>9:00 PM</option>
+                  <option>9:30 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Special Requests <span style="font-weight:400;opacity:.6">(optional)</span></label>
+              <textarea id="message" name="message" placeholder="Allergies, a celebration, seating preferences…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="reveal">
+          <div class="info-block">
+            <h4>Find Us</h4>
+            <p>Ground Floor, Saffron House,<br/>Ramnagar, Manpada Road,<br/>Dombivli West, Thane 421202,<br/>Maharashtra, India</p>
+          </div>
+          <div class="info-block">
+            <h4>Reach Us</h4>
+            <p><a href="tel:+912212345678">+91 22 1234 5678</a> · <a href="tel:+919812345678">+91 98123 45678</a></p>
+            <p><a href="mailto:hello@saffronandsage.in">hello@saffronandsage.in</a></p>
+          </div>
+          <div class="info-block">
+            <h4>Opening Hours</h4>
+            <ul class="hours-list">
+              <li><span>Tuesday – Friday</span><b>6:30 PM – 11:30 PM</b></li>
+              <li><span>Saturday – Sunday</span><b>12:30 PM – 3:30 PM · 6:30 PM – 11:30 PM</b></li>
+              <li><span>Monday</span><b>Closed</b></li>
+            </ul>
+          </div>
+          <div class="map" role="img" aria-label="Map showing Saffron and Sage in Dombivli West">
+            <span class="pin" aria-hidden="true">📍 Saffron &amp; Sage, Dombivli West</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <span class="mark" aria-hidden="true">S</span>
+          <span>Saffron&nbsp;&amp;&nbsp;Sage</span>
+        </div>
+        <p style="max-width:34ch;">Modern Indian fine dining in Dombivli West. Heritage recipes, coastal produce, and warm hospitality since 2016.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="X (Twitter)">✕</a>
+          <a href="#" aria-label="WhatsApp">✆</a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul class="foot-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#reserve">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul class="foot-links">
+          <li><a href="#reserve">Manpada Road, Dombivli West</a></li>
+          <li><a href="tel:+912212345678">+91 22 1234 5678</a></li>
+          <li><a href="mailto:hello@saffronandsage.in">hello@saffronandsage.in</a></li>
+          <li>Tue–Sun · Closed Mondays</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Saffron &amp; Sage. All rights reserved.</span>
+      <span>Website crafted by <a href="https://www.parshwaventures.co.in" target="_blank" rel="noopener">Parshwaventures</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu
+  const burger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const toggleMenu = (open) => {
+    const willOpen = open ?? !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', willOpen);
+    burger.classList.toggle('open', willOpen);
+    burger.setAttribute('aria-expanded', willOpen);
+    document.body.style.overflow = willOpen ? 'hidden' : '';
+  };
+  burger.addEventListener('click', () => toggleMenu());
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Reservation form
+  const form = document.getElementById('resForm');
+  const success = document.getElementById('formSuccess');
+  // Prevent past dates
+  const dateInput = document.getElementById('date');
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const name = document.getElementById('name').value.trim().split(' ')[0] || 'there';
+    const guests = document.getElementById('guests').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const pretty = date ? new Date(date + 'T00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'}) : 'your chosen date';
+    success.innerHTML = `Thank you, <b>${name}</b>! Your table for <b>${guests}</b> on <b>${pretty}</b> at <b>${time}</b> is requested. We'll confirm by phone shortly. ✦`;
+    success.classList.add('show');
+    form.reset();
+    dateInput.min = new Date().toISOString().split('T')[0];
+    success.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // Footer year
+  document.querySelector('.foot-bottom span').innerHTML = document.querySelector('.foot-bottom span').innerHTML.replace('2026', new Date().getFullYear());
+</script>
+</body>
+</html>
