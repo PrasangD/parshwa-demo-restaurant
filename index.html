@@ -559,7 +559,9 @@
       <div class="reserve-grid">
         <!-- Form -->
         <div class="res-card reveal">
-          <form id="resForm" novalidate>
+          <form id="resForm" novalidate action="https://formspree.io/f/xvzjrvyv" method="POST">
+            <input type="hidden" name="_subject" value="New reservation/enquiry — Saffron & Sage (restaurant demo)" />
+            <input type="hidden" name="_source" value="Saffron & Sage — Parshwaventures demo site" />
             <div class="field">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" placeholder="e.g. Priya Kulkarni" required autocomplete="name" />
@@ -714,7 +716,8 @@
   const dateInput = document.getElementById('date');
   dateInput.min = new Date().toISOString().split('T')[0];
 
-  form.addEventListener('submit', (e) => {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     const name = document.getElementById('name').value.trim().split(' ')[0] || 'there';
@@ -722,11 +725,25 @@
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     const pretty = date ? new Date(date + 'T00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'}) : 'your chosen date';
-    success.innerHTML = `Thank you, <b>${name}</b>! Your table for <b>${guests}</b> on <b>${pretty}</b> at <b>${time}</b> is requested. We'll confirm by phone shortly. ✦`;
-    success.classList.add('show');
-    form.reset();
-    dateInput.min = new Date().toISOString().split('T')[0];
-    success.scrollIntoView({behavior:'smooth', block:'center'});
+
+    const btnLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+    try {
+      const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{ 'Accept':'application/json' } });
+      if (!res.ok) throw new Error('Request failed');
+      success.innerHTML = `Thank you, <b>${name}</b>! Your table for <b>${guests}</b> on <b>${pretty}</b> at <b>${time}</b> is requested. We'll confirm by phone shortly. ✦`;
+      success.classList.add('show');
+      form.reset();
+      dateInput.min = new Date().toISOString().split('T')[0];
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+    } catch (err) {
+      success.innerHTML = `Something went wrong — please call us at <a href="tel:+912212345678">+91 22 1234 5678</a> or email <a href="mailto:hello@saffronandsage.in">hello@saffronandsage.in</a> directly.`;
+      success.classList.add('show');
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = btnLabel; }
+    }
   });
 
   // Footer year
